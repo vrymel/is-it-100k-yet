@@ -1,0 +1,22 @@
+{
+  "name": "is-it-100k-yet",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Is It 100k Yet?",
+  "author": "Vrymel",
+  "keywords": [
+    "gatsby"
+  ],
+  "scripts": {
+    "develop": "gatsby develop",
+    "start": "gatsby develop",
+    "build": "gatsby build",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean"
+  },
+  "dependencies": {
+    "gatsby": "^3.3.1",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
+  }
+}
