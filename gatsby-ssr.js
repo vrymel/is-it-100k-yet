@@ -1,10 +1,8 @@
-import * as React from "react"
+const React = require("react");
 
-module.exports = {
-    onRenderBody: ({setHeadComponents}) => {
-        setHeadComponents([
-            <script async defer data-domain="isbtc100kyet.com"
-                    src="https://stats.isbtc100kyet.com/js/index.js"></script>,
-        ])
-    }
-};
+export const onRenderBody = ({setHeadComponents}) => {
+    setHeadComponents([
+        <script async defer data-domain="isbtc100kyet.com"
+                src="https://stats.isbtc100kyet.com/js/index.js"></script>,
+    ])
+}
