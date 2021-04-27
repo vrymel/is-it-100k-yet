@@ -60,26 +60,24 @@ const IndexPage = () => {
                     <h1 className="text-center text-2xl md:text-3xl leading-8 font-bold tracking-tight text-gray-800 dark:text-white sm:text-4xl">
                         Is BTC 100k Yet?
 
-                        <span className="ml-2 font-black text-gray-900 dark:text-white">{is100k ? 'Yes! 😱' : 'Not yet. 😴'}</span>
+                        <span
+                            className="ml-2 font-black text-gray-900 dark:text-white">{is100k ? 'Yes! 😱' : 'Not yet. 😴'}</span>
                     </h1>
 
                     <div className="mt-6 text-center">
-                        {price &&
-                        <>
-                            <h2 className="text-center text-4xl md:text-6xl font-extrabold text-yellow-500">
-                                <a href="https://www.coindesk.com/price/bitcoin">
-                                    {priceFormatted}
-                                </a>
-                            </h2>
-                        </>
-                        }
+                        <h2 className="text-center text-4xl md:text-6xl font-extrabold text-yellow-500">
+                            <a href="https://www.coindesk.com/price/bitcoin">
+                                {price ? priceFormatted : '-'}
+                            </a>
+                        </h2>
                     </div>
                 </div>
             </main>
 
             <footer className="flex flex-col md:flex-row justify-between px-6 py-2">
-                <p className="text-gray-800 dark:text-white text-center md:text-left">Made by <a href="https://vrymel.com"
-                                                                                 className="text-yellow-500 font-bold">Vrymel</a>
+                <p className="text-gray-800 dark:text-white text-center md:text-left">Made by <a
+                    href="https://vrymel.com"
+                    className="text-yellow-500 font-bold">Vrymel</a>
                 </p>
                 <p className="text-gray-800 dark:text-white text-center md:text-left">
                     <span>Powered by <a href="https://www.coindesk.com/price/bitcoin"
