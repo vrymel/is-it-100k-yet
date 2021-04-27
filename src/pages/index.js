@@ -57,7 +57,7 @@ const IndexPage = () => {
 
             <main className="flex-1">
                 <div className="h-full flex flex-col justify-center items-center">
-                    <h1 className="text-center text-3xl leading-8 font-bold tracking-tight text-gray-800 sm:text-4xl">
+                    <h1 className="text-center text-2xl md:text-3xl leading-8 font-bold tracking-tight text-gray-800 sm:text-4xl">
                         Is BTC 100k Yet?
 
                         <span className="ml-2 font-black text-gray-900">{is100k ? 'Yes! 😱' : 'Not yet. 😴'}</span>
@@ -66,7 +66,7 @@ const IndexPage = () => {
                     <div className="mt-6 text-center">
                         {price &&
                         <>
-                            <h2 className="text-center text-6xl font-extrabold text-yellow-500">
+                            <h2 className="text-center text-4xl md:text-6xl font-extrabold text-yellow-500">
                                 <a href="https://www.coindesk.com/price/bitcoin">
                                     {priceFormatted}
                                 </a>
