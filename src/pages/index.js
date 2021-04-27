@@ -1,7 +1,7 @@
 import * as React from "react"
 import {useEffect, useState} from "react";
 import {useInterval} from "../hooks";
-import {parseISO, formatDistance, format} from 'date-fns';
+import {parseISO, formatDistance} from 'date-fns';
 
 const TARGET_PRICE = 100000;
 
@@ -52,15 +52,15 @@ const IndexPage = () => {
     const title = priceFormatted ? `${priceFormatted} | Is BTC 100k Yet?` : 'Is BTC 100k Yet?';
 
     return (
-        <div className="h-screen flex flex-col">
+        <div className="h-screen flex flex-col bg-white dark:bg-gray-900">
             <title>{title}</title>
 
             <main className="flex-1">
                 <div className="h-full flex flex-col justify-center items-center">
-                    <h1 className="text-center text-2xl md:text-3xl leading-8 font-bold tracking-tight text-gray-800 sm:text-4xl">
+                    <h1 className="text-center text-2xl md:text-3xl leading-8 font-bold tracking-tight text-gray-800 dark:text-white sm:text-4xl">
                         Is BTC 100k Yet?
 
-                        <span className="ml-2 font-black text-gray-900">{is100k ? 'Yes! 😱' : 'Not yet. 😴'}</span>
+                        <span className="ml-2 font-black text-gray-900 dark:text-white">{is100k ? 'Yes! 😱' : 'Not yet. 😴'}</span>
                     </h1>
 
                     <div className="mt-6 text-center">
@@ -78,10 +78,10 @@ const IndexPage = () => {
             </main>
 
             <footer className="flex flex-col md:flex-row justify-between px-6 py-2">
-                <p className="text-gray-800 text-center md:text-left">Made by <a href="https://vrymel.com"
+                <p className="text-gray-800 dark:text-white text-center md:text-left">Made by <a href="https://vrymel.com"
                                                                                  className="text-yellow-500 font-bold">Vrymel</a>
                 </p>
-                <p className="text-gray-800 text-center md:text-left">
+                <p className="text-gray-800 dark:text-white text-center md:text-left">
                     <span>Powered by <a href="https://www.coindesk.com/price/bitcoin"
                                         className="text-yellow-500 font-bold">CoinDesk</a></span>
                     <span
