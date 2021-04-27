@@ -26,11 +26,14 @@ const IndexPage = () => {
     }, 10000);
 
     const numberFormat = new Intl.NumberFormat();
+    const priceFormatted = price ? '$'+numberFormat.format(price) : null;
     const is100k = price >= 100000;
+
+    const title = priceFormatted ? `${priceFormatted} | Is BTC 100k Yet?` : 'Is BTC 100k Yet?';
 
     return (
         <div className="h-screen flex flex-col">
-            <title>Is BTC 100k Yet?</title>
+            <title>{title}</title>
 
             <main className="flex-1">
                 <div className="h-full flex flex-col justify-center items-center">
@@ -44,7 +47,7 @@ const IndexPage = () => {
                         {price &&
                         <h2 className="text-center text-6xl font-extrabold text-yellow-500">
                             <a href="https://www.coindesk.com/price/bitcoin">
-                                {numberFormat.format(price)}
+                                {priceFormatted}
                             </a>
                         </h2>}
                     </div>
