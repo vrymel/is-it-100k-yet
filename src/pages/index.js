@@ -1,10 +1,11 @@
 import * as React from "react"
 import {useEffect, useState} from "react";
+import {useInterval} from "../hooks";
 
 const IndexPage = () => {
     const [price, setPrice] = useState(null);
 
-    useEffect(() => {
+    function doFetchPrice() {
         fetch('https://api.coindesk.com/v1/bpi/currentprice.json')
             .then(response => response.json())
             .then(data => {
@@ -13,8 +14,16 @@ const IndexPage = () => {
                 let number = parseFloat(string).toFixed(2)
                 setPrice(number);
             })
-            .catch(error => console.error(error))
-    }, []);
+            .catch(error => console.error(error));
+    }
+
+    useEffect(function onLoad() {
+        doFetchPrice();
+    }, [])
+
+    useInterval(function () {
+        doFetchPrice();
+    }, 10000);
 
     const numberFormat = new Intl.NumberFormat();
     const is100k = price >= 100000;
@@ -43,8 +52,10 @@ const IndexPage = () => {
             </main>
 
             <footer className="flex justify-between px-6 py-2">
-                <p className="text-gray-800">Made by <a href="https://vrymel.com" className="text-yellow-500 font-bold">Vrymel</a></p>
-                <p className="text-gray-800">Powered by <a href="https://www.coindesk.com/price/bitcoin" className="text-yellow-500 font-bold">CoinDesk</a></p>
+                <p className="text-gray-800">Made by <a href="https://vrymel.com"
+                                                        className="text-yellow-500 font-bold">Vrymel</a></p>
+                <p className="text-gray-800">Powered by <a href="https://www.coindesk.com/price/bitcoin"
+                                                           className="text-yellow-500 font-bold">CoinDesk</a></p>
             </footer>
         </div>
     )
